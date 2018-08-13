@@ -1,0 +1,16 @@
+PODS:
+  - JPLiquidLayout (0.1.0)
+
+DEPENDENCIES:
+  - JPLiquidLayout (from `../`)
+
+EXTERNAL SOURCES:
+  JPLiquidLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JPLiquidLayout: 7edbd924c4392d23148a0cd29bc01fdb90236c7d
+
+PODFILE CHECKSUM: f6646f0f34c918796d059c250276677e3a229c52
+
+COCOAPODS: 1.5.3
