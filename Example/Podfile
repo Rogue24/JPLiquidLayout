@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JPLiquidLayout_Example' do
+  pod 'JPLiquidLayout', :path => '../'
+
+  target 'JPLiquidLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
