@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A30D32F212133FE00114765 /* JPViewModelCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D32E212133FE00114765 /* JPViewModelCollectionVC.m */; };
-		1A30D3322121340B00114765 /* JPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D3312121340B00114765 /* JPCollectionViewCell.m */; };
-		1A30D33C2121630100114765 /* JPCollectionViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D33B2121630100114765 /* JPCollectionViewCellViewModel.m */; };
-		1A30D33F21216CC300114765 /* JPFlowLayoutCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D33E21216CC300114765 /* JPFlowLayoutCollectionVC.m */; };
-		1A30D34821217C4B00114765 /* JPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D34721217C4B00114765 /* JPTableViewController.m */; };
 		1A30D378212184EF00114765 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D34A212184EF00114765 /* UIScrollView+MJRefresh.m */; };
 		1A30D379212184EF00114765 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D34B212184EF00114765 /* MJRefreshConst.m */; };
 		1A30D37A212184EF00114765 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A30D34F212184EF00114765 /* MJRefresh.bundle */; };
@@ -32,6 +27,14 @@
 		1A30D389212184EF00114765 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D372212184EF00114765 /* MJRefreshBackFooter.m */; };
 		1A30D38A212184EF00114765 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D373212184EF00114765 /* MJRefreshAutoFooter.m */; };
 		1A30D38B212184EF00114765 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30D375212184EF00114765 /* MJRefreshComponent.m */; };
+		1AF7F0EE212429AC00615CD5 /* JPPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0DC212429AC00615CD5 /* JPPictureModel.m */; };
+		1AF7F0EF212429AC00615CD5 /* JPCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0DF212429AC00615CD5 /* JPCollectionViewController.m */; };
+		1AF7F0F0212429AC00615CD5 /* JPFlowLayoutCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0E3212429AC00615CD5 /* JPFlowLayoutCollectionVC.m */; };
+		1AF7F0F1212429AC00615CD5 /* JPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0E5212429AC00615CD5 /* JPTableViewController.m */; };
+		1AF7F0F2212429AC00615CD5 /* JPViewModelCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0E6212429AC00615CD5 /* JPViewModelCollectionVC.m */; };
+		1AF7F0F3212429AC00615CD5 /* JPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0E8212429AC00615CD5 /* JPCollectionViewCell.m */; };
+		1AF7F0F4212429AC00615CD5 /* JPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7F0E9212429AC00615CD5 /* JPCollectionViewCell.xib */; };
+		1AF7F0F5212429AC00615CD5 /* JPCollectionViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7F0EC212429AC00615CD5 /* JPCollectionViewCellViewModel.m */; };
 		2E6B0923CFF4CD17B4D07EB8 /* Pods_JPLiquidLayout_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42879400A03C0C9EEFD4192A /* Pods_JPLiquidLayout_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -61,16 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A30D32D212133FE00114765 /* JPViewModelCollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPViewModelCollectionVC.h; sourceTree = "<group>"; };
-		1A30D32E212133FE00114765 /* JPViewModelCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPViewModelCollectionVC.m; sourceTree = "<group>"; };
-		1A30D3302121340B00114765 /* JPCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPCollectionViewCell.h; sourceTree = "<group>"; };
-		1A30D3312121340B00114765 /* JPCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPCollectionViewCell.m; sourceTree = "<group>"; };
-		1A30D33A2121630100114765 /* JPCollectionViewCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPCollectionViewCellViewModel.h; sourceTree = "<group>"; };
-		1A30D33B2121630100114765 /* JPCollectionViewCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPCollectionViewCellViewModel.m; sourceTree = "<group>"; };
-		1A30D33D21216CC300114765 /* JPFlowLayoutCollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPFlowLayoutCollectionVC.h; sourceTree = "<group>"; };
-		1A30D33E21216CC300114765 /* JPFlowLayoutCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPFlowLayoutCollectionVC.m; sourceTree = "<group>"; };
-		1A30D34621217C4B00114765 /* JPTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPTableViewController.h; sourceTree = "<group>"; };
-		1A30D34721217C4B00114765 /* JPTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPTableViewController.m; sourceTree = "<group>"; };
 		1A30D34A212184EF00114765 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		1A30D34B212184EF00114765 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
 		1A30D34C212184EF00114765 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
@@ -111,6 +104,21 @@
 		1A30D375212184EF00114765 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
 		1A30D376212184EF00114765 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
 		1A30D377212184EF00114765 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		1AF7F0DC212429AC00615CD5 /* JPPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPictureModel.m; sourceTree = "<group>"; };
+		1AF7F0DD212429AC00615CD5 /* JPPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPictureModel.h; sourceTree = "<group>"; };
+		1AF7F0DF212429AC00615CD5 /* JPCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCollectionViewController.m; sourceTree = "<group>"; };
+		1AF7F0E0212429AC00615CD5 /* JPFlowLayoutCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFlowLayoutCollectionVC.h; sourceTree = "<group>"; };
+		1AF7F0E1212429AC00615CD5 /* JPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTableViewController.h; sourceTree = "<group>"; };
+		1AF7F0E2212429AC00615CD5 /* JPViewModelCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPViewModelCollectionVC.h; sourceTree = "<group>"; };
+		1AF7F0E3212429AC00615CD5 /* JPFlowLayoutCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFlowLayoutCollectionVC.m; sourceTree = "<group>"; };
+		1AF7F0E4212429AC00615CD5 /* JPCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCollectionViewController.h; sourceTree = "<group>"; };
+		1AF7F0E5212429AC00615CD5 /* JPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTableViewController.m; sourceTree = "<group>"; };
+		1AF7F0E6212429AC00615CD5 /* JPViewModelCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPViewModelCollectionVC.m; sourceTree = "<group>"; };
+		1AF7F0E8212429AC00615CD5 /* JPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCollectionViewCell.m; sourceTree = "<group>"; };
+		1AF7F0E9212429AC00615CD5 /* JPCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCollectionViewCell.xib; sourceTree = "<group>"; };
+		1AF7F0EA212429AC00615CD5 /* JPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCollectionViewCell.h; sourceTree = "<group>"; };
+		1AF7F0EC212429AC00615CD5 /* JPCollectionViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCollectionViewCellViewModel.m; sourceTree = "<group>"; };
+		1AF7F0ED212429AC00615CD5 /* JPCollectionViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCollectionViewCellViewModel.h; sourceTree = "<group>"; };
 		2F9A58A9C1D5BD2648893EBA /* Pods-JPLiquidLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPLiquidLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPLiquidLayout_Tests/Pods-JPLiquidLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		42879400A03C0C9EEFD4192A /* Pods_JPLiquidLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPLiquidLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDAE78C424A52968B201166 /* Pods_JPLiquidLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPLiquidLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +146,7 @@
 		9040389ADE6E22B432A7C36C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		96E4EA79FC08EE761110729B /* Pods-JPLiquidLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPLiquidLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPLiquidLayout_Example/Pods-JPLiquidLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA8075131A4152F4AA26267 /* Pods-JPLiquidLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPLiquidLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPLiquidLayout_Tests/Pods-JPLiquidLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FEAD6A00E24F78CDA1AE8D7A /* JPLiquidLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JPLiquidLayout.podspec; path = ../JPLiquidLayout.podspec; sourceTree = "<group>"; };
+		FEAD6A00E24F78CDA1AE8D7A /* JPLiquidLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JPLiquidLayout.podspec; path = ../JPLiquidLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +270,49 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1AF7F0DB212429AC00615CD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7F0DD212429AC00615CD5 /* JPPictureModel.h */,
+				1AF7F0DC212429AC00615CD5 /* JPPictureModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1AF7F0DE212429AC00615CD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7F0E1212429AC00615CD5 /* JPTableViewController.h */,
+				1AF7F0E5212429AC00615CD5 /* JPTableViewController.m */,
+				1AF7F0E4212429AC00615CD5 /* JPCollectionViewController.h */,
+				1AF7F0DF212429AC00615CD5 /* JPCollectionViewController.m */,
+				1AF7F0E2212429AC00615CD5 /* JPViewModelCollectionVC.h */,
+				1AF7F0E6212429AC00615CD5 /* JPViewModelCollectionVC.m */,
+				1AF7F0E0212429AC00615CD5 /* JPFlowLayoutCollectionVC.h */,
+				1AF7F0E3212429AC00615CD5 /* JPFlowLayoutCollectionVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1AF7F0E7212429AC00615CD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7F0EA212429AC00615CD5 /* JPCollectionViewCell.h */,
+				1AF7F0E8212429AC00615CD5 /* JPCollectionViewCell.m */,
+				1AF7F0E9212429AC00615CD5 /* JPCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1AF7F0EB212429AC00615CD5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7F0ED212429AC00615CD5 /* JPCollectionViewCellViewModel.h */,
+				1AF7F0EC212429AC00615CD5 /* JPCollectionViewCellViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		215A5A5C903A8262CEE96447 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,19 +361,13 @@
 		6003F593195388D20070C39A /* Example for JPLiquidLayout */ = {
 			isa = PBXGroup;
 			children = (
-				1A30D349212184EF00114765 /* MJRefresh */,
 				6003F59C195388D20070C39A /* JPAppDelegate.h */,
 				6003F59D195388D20070C39A /* JPAppDelegate.m */,
-				1A30D34621217C4B00114765 /* JPTableViewController.h */,
-				1A30D34721217C4B00114765 /* JPTableViewController.m */,
-				1A30D32D212133FE00114765 /* JPViewModelCollectionVC.h */,
-				1A30D32E212133FE00114765 /* JPViewModelCollectionVC.m */,
-				1A30D33D21216CC300114765 /* JPFlowLayoutCollectionVC.h */,
-				1A30D33E21216CC300114765 /* JPFlowLayoutCollectionVC.m */,
-				1A30D3302121340B00114765 /* JPCollectionViewCell.h */,
-				1A30D3312121340B00114765 /* JPCollectionViewCell.m */,
-				1A30D33A2121630100114765 /* JPCollectionViewCellViewModel.h */,
-				1A30D33B2121630100114765 /* JPCollectionViewCellViewModel.m */,
+				1A30D349212184EF00114765 /* MJRefresh */,
+				1AF7F0DE212429AC00615CD5 /* Controller */,
+				1AF7F0E7212429AC00615CD5 /* View */,
+				1AF7F0EB212429AC00615CD5 /* ViewModel */,
+				1AF7F0DB212429AC00615CD5 /* Model */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -423,6 +468,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Rogue24;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = FH4WHYK8ZQ;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -457,6 +505,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				1A30D37A212184EF00114765 /* MJRefresh.bundle in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				1AF7F0F4212429AC00615CD5 /* JPCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,31 +582,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A30D37B212184EF00114765 /* UIScrollView+MJExtension.m in Sources */,
+				1AF7F0F5212429AC00615CD5 /* JPCollectionViewCellViewModel.m in Sources */,
 				1A30D383212184EF00114765 /* MJRefreshAutoNormalFooter.m in Sources */,
 				6003F59E195388D20070C39A /* JPAppDelegate.m in Sources */,
 				1A30D386212184EF00114765 /* MJRefreshGifHeader.m in Sources */,
 				1A30D38B212184EF00114765 /* MJRefreshComponent.m in Sources */,
+				1AF7F0F2212429AC00615CD5 /* JPViewModelCollectionVC.m in Sources */,
+				1AF7F0F0212429AC00615CD5 /* JPFlowLayoutCollectionVC.m in Sources */,
 				1A30D384212184EF00114765 /* MJRefreshNormalHeader.m in Sources */,
 				1A30D37C212184EF00114765 /* NSBundle+MJRefresh.m in Sources */,
 				1A30D37D212184EF00114765 /* UIView+MJExtension.m in Sources */,
 				1A30D382212184EF00114765 /* MJRefreshAutoGifFooter.m in Sources */,
-				1A30D34821217C4B00114765 /* JPTableViewController.m in Sources */,
-				1A30D33C2121630100114765 /* JPCollectionViewCellViewModel.m in Sources */,
 				1A30D380212184EF00114765 /* MJRefreshBackNormalFooter.m in Sources */,
+				1AF7F0F3212429AC00615CD5 /* JPCollectionViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				1A30D385212184EF00114765 /* MJRefreshStateHeader.m in Sources */,
 				1A30D381212184EF00114765 /* MJRefreshAutoStateFooter.m in Sources */,
 				1A30D389212184EF00114765 /* MJRefreshBackFooter.m in Sources */,
-				1A30D33F21216CC300114765 /* JPFlowLayoutCollectionVC.m in Sources */,
+				1AF7F0F1212429AC00615CD5 /* JPTableViewController.m in Sources */,
 				1A30D387212184EF00114765 /* MJRefreshFooter.m in Sources */,
-				1A30D3322121340B00114765 /* JPCollectionViewCell.m in Sources */,
 				1A30D379212184EF00114765 /* MJRefreshConst.m in Sources */,
+				1AF7F0EE212429AC00615CD5 /* JPPictureModel.m in Sources */,
 				1A30D388212184EF00114765 /* MJRefreshHeader.m in Sources */,
 				1A30D37F212184EF00114765 /* MJRefreshBackStateFooter.m in Sources */,
 				1A30D378212184EF00114765 /* UIScrollView+MJRefresh.m in Sources */,
+				1AF7F0EF212429AC00615CD5 /* JPCollectionViewController.m in Sources */,
 				1A30D37E212184EF00114765 /* MJRefreshBackGifFooter.m in Sources */,
 				1A30D38A212184EF00114765 /* MJRefreshAutoFooter.m in Sources */,
-				1A30D32F212133FE00114765 /* JPViewModelCollectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,12 +736,14 @@
 			baseConfigurationReference = 96E4EA79FC08EE761110729B /* Pods-JPLiquidLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JPLiquidLayout/JPLiquidLayout-Prefix.pch";
 				INFOPLIST_FILE = "JPLiquidLayout/JPLiquidLayout-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -700,12 +753,14 @@
 			baseConfigurationReference = 6F035D333ECFE5E07990B825 /* Pods-JPLiquidLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JPLiquidLayout/JPLiquidLayout-Prefix.pch";
 				INFOPLIST_FILE = "JPLiquidLayout/JPLiquidLayout-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

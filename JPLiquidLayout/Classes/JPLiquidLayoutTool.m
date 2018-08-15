@@ -10,50 +10,50 @@
 
 @implementation JPLiquidLayoutTool
 
++ (CGFloat)calculateItemFrames:(NSArray<NSObject<JPLiquidLayoutProtocol> *> *)items
+                     targetRow:(NSInteger)targetRow
+                  liquidLayout:(JPLiquidLayout *)liquidLayout {
+    return [self calculateItemFrames:items
+                           targetRow:targetRow
+                          flowLayout:liquidLayout
+                            maxWidth:liquidLayout.maxWidth
+                          baseHeight:liquidLayout.baseHeight
+                      itemMaxWhScale:liquidLayout.itemMaxWhScale
+                              maxCol:liquidLayout.maxCol];
+}
+
 + (CGFloat)updateItemFrames:(NSArray<NSObject<JPLiquidLayoutProtocol> *> *)items
-                  fromIndex:(NSInteger)fromIndex
+                targetIndex:(NSInteger)targetIndex
+               liquidLayout:(JPLiquidLayout *)liquidLayout {
+    return [self updateItemFrames:items
+                      targetIndex:targetIndex
+                       flowLayout:liquidLayout
+                         maxWidth:liquidLayout.maxWidth
+                       baseHeight:liquidLayout.baseHeight
+                   itemMaxWhScale:liquidLayout.itemMaxWhScale
+                           maxCol:liquidLayout.maxCol];
+}
+
++ (CGFloat)updateItemFrames:(NSArray<NSObject<JPLiquidLayoutProtocol> *> *)items
+                targetIndex:(NSInteger)targetIndex
                  flowLayout:(UICollectionViewFlowLayout *)flowLayout
                    maxWidth:(CGFloat)maxWidth
                  baseHeight:(CGFloat)baseHeight
              itemMaxWhScale:(CGFloat)itemMaxWhScale
                      maxCol:(NSInteger)maxCol {
-    if (items.count == 0) return 0;
-    if (fromIndex > items.count - 1) return CGRectGetMaxY([items.lastObject jp_itemFrame]) + flowLayout.minimumLineSpacing;
-    NSObject<JPLiquidLayoutProtocol> *fromItem = items[fromIndex];
-    for (NSObject<JPLiquidLayoutProtocol> *item in items) {
-        if (item.jp_rowIndex >= fromItem.jp_rowIndex) {
-            item.jp_isSetedItemFrame = NO;
-        }
-    }
-    return [self calculateItemFrames:items
-                          flowLayout:flowLayout
-                            maxWidth:maxWidth
-                          baseHeight:baseHeight
-                      itemMaxWhScale:itemMaxWhScale
-                              maxCol:maxCol];
-}
-
-+ (CGFloat)insertOrDeleteItemFrames:(NSArray<NSObject<JPLiquidLayoutProtocol> *> *)items
-                        targetIndex:(NSInteger)targetIndex
-                         flowLayout:(UICollectionViewFlowLayout *)flowLayout
-                           maxWidth:(CGFloat)maxWidth
-                         baseHeight:(CGFloat)baseHeight
-                     itemMaxWhScale:(CGFloat)itemMaxWhScale
-                             maxCol:(NSInteger)maxCol {
     NSInteger count = items.count;
     if (count == 0) return 0;
-    if (targetIndex > 0) {
-        NSInteger maxIndex = count - 1;
-        NSInteger lastIndex = targetIndex - 1;
-        NSObject<JPLiquidLayoutProtocol> *lastItem = items[lastIndex];
-        for (NSInteger i = 0; i < maxIndex; i++) {
-            NSObject<JPLiquidLayoutProtocol> *item = items[i];
-            if (item.jp_rowIndex >= lastItem.jp_rowIndex || i > lastIndex) {
-                item.jp_isSetedItemFrame = NO;
-            }
+    if (targetIndex > items.count - 1) return CGRectGetMaxY([items.lastObject jp_itemFrame]) + flowLayout.sectionInset.bottom;
+    NSInteger lastIndex = targetIndex > 0 ? (targetIndex - 1) : 0;
+    NSObject<JPLiquidLayoutProtocol> *lastItem = items[lastIndex];
+    for (NSInteger i = 0; i < count; i++) {
+        NSObject<JPLiquidLayoutProtocol> *item = items[i];
+        if (item.jp_rowIndex >= lastItem.jp_rowIndex || i >= lastIndex) {
+            item.jp_isSetedDone = NO;
         }
     }
     return [self calculateItemFrames:items
+                           targetRow:lastItem.jp_rowIndex
                           flowLayout:flowLayout
                             maxWidth:maxWidth
                           baseHeight:baseHeight
@@ -62,6 +62,7 @@
 }
 
 + (CGFloat)calculateItemFrames:(NSArray<NSObject<JPLiquidLayoutProtocol> *> *)items
+                     targetRow:(NSInteger)targetRow
                     flowLayout:(UICollectionViewFlowLayout *)flowLayout
                       maxWidth:(CGFloat)maxWidth
                     baseHeight:(CGFloat)baseHeight
@@ -78,14 +79,14 @@
     
     NSInteger maxIndex = count - 1;
     NSInteger colIndex = 0;
-    NSInteger rowIndex = 0;
+    NSInteger rowIndex = targetRow;
     CGFloat x = sectionInset.left;
     CGFloat y = sectionInset.top;
     
     for (NSInteger i = 0; i < count; i++) {
         
         NSObject<JPLiquidLayoutProtocol> *item = items[i];
-        if (item.jp_isSetedItemFrame) {
+        if (item.jp_isSetedDone) {
             maxHeight = CGRectGetMaxY(item.jp_itemFrame) + sectionInset.bottom;
             continue;
         }
@@ -101,7 +102,7 @@
             item.jp_itemFrame = CGRectMake(x, y, w - 0.1, h);
             item.jp_colIndex = colIndex;
             item.jp_rowIndex = rowIndex;
-            item.jp_isSetedItemFrame = YES;
+            item.jp_isSetedDone = YES;
             
             y += h + lineSpacing;
             rowIndex += 1;
@@ -115,7 +116,7 @@
             if (i == maxIndex) {
                 item.jp_colIndex = colIndex;
                 item.jp_rowIndex = rowIndex;
-                item.jp_isSetedItemFrame = YES;
+                item.jp_isSetedDone = YES;
                 maxHeight = CGRectGetMaxY(item.jp_itemFrame) + sectionInset.bottom;
             } else {
                 CGFloat totalW = w;
@@ -165,7 +166,7 @@
                     thisRowItem.jp_itemFrame = frame;
                     thisRowItem.jp_colIndex = colIndex;
                     thisRowItem.jp_rowIndex = rowIndex;
-                    thisRowItem.jp_isSetedItemFrame = YES;
+                    thisRowItem.jp_isSetedDone = YES;
                     
                     x += frame.size.width + interitemSpacing;
                     colIndex += 1;

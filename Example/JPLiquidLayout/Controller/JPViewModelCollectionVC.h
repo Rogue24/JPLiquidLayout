@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JPCollectionViewController.h"
 
-@interface JPViewModelCollectionVC : UICollectionViewController
+@interface JPViewModelCollectionVC : JPCollectionViewController
 + (instancetype)collectionViewController;
 @end

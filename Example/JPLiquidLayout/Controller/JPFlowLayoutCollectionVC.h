@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JPCollectionViewController.h"
 
-@interface JPFlowLayoutCollectionVC : UICollectionViewController
+@interface JPFlowLayoutCollectionVC : JPCollectionViewController
 + (instancetype)collectionViewController;
 @end

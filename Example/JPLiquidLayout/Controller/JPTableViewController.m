@@ -20,7 +20,7 @@ static NSString * const reuseIdentifier = @"JPTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titles = @[@"使用ViewModel方式", @"使用UICollectionViewFlowLayout方式"];
+    self.titles = @[@"使用ViewModel方式", @"使用系统FlowLayout方式"];
 }
 
 #pragma mark - Table view data source

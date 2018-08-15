@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JPPictureModel.h"
 #import "JPLiquidLayoutTool.h"
 
 @interface JPCollectionViewCellViewModel : NSObject <JPLiquidLayoutProtocol>
-@property (nonatomic, assign) NSString *picName;
-+ (NSArray<JPCollectionViewCellViewModel *> *)randomCellVMs;
-+ (JPCollectionViewCellViewModel *)randomCellVM;
+- (instancetype)initWithPicModel:(JPPictureModel *)picModel;
+@property (nonatomic, strong) JPPictureModel *picModel;
 @end
