@@ -47,30 +47,41 @@
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     // 放入子线程计算布局
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
         // 一般从服务器请求获取的数据会给出图片的尺寸（相册使用photoKit的话，asset对象也会有照片尺寸给出），获取图片的宽高比
         NSArray *picModels = [JPPictureModel randomPicModels];
+        
+        NSMutableArray *cellVMs = [self.cellVMs mutableCopy];
         NSMutableArray *indexPaths = [NSMutableArray array];
-        NSInteger startIndex = self.cellVMs.count;
+        NSInteger startIndex = cellVMs.count;
+        
         for (NSInteger i = 0; i < picModels.count; i++) {
             [indexPaths addObject:[NSIndexPath indexPathForItem:startIndex + i inSection:0]];
-            JPPictureModel *picModel = picModels[i];
+            
             // 创建遵守JPLiquidLayoutProtocol协议的viewModel
+            JPPictureModel *picModel = picModels[i];
             JPCollectionViewCellViewModel *cellVM = [[JPCollectionViewCellViewModel alloc] initWithPicModel:picModel];
-            [self.cellVMs addObject:cellVM];
+            [cellVMs addObject:cellVM];
         }
+        
         // 使用JPLiquidLayoutTool工具类进行布局计算
         // 需要传入【整个】viewModel数组，和其他参数
-        [JPLiquidLayoutTool updateItemFrames:self.cellVMs
+        [JPLiquidLayoutTool updateItemFrames:cellVMs
                                  targetIndex:startIndex
                                   flowLayout:flowLayout
                                     maxWidth:self->_maxW
                                   baseHeight:self->_baseH
                               itemMaxWhScale:self->_maxWhScale
                                       maxCol:self->_maxCol];
+        
         // 回到主线程进行刷新
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            self.cellVMs = cellVMs;
+            
             [self.collectionView.mj_header endRefreshing];
             [self.collectionView.mj_footer endRefreshing];
+            
             [UIView animateWithDuration:0.85 delay:0 usingSpringWithDamping:0.55 initialSpringVelocity:0.1 options:kNilOptions animations:^{
                 [self.collectionView performBatchUpdates:^{
                     [self.collectionView insertItemsAtIndexPaths:indexPaths];

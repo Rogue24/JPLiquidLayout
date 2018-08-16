@@ -50,16 +50,25 @@
 
 - (void)insertCellVMs {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSArray *picModels = [JPPictureModel randomPicModels];
+        
+        NSArray *randomPicModels = [JPPictureModel randomPicModels];
+        
+        NSMutableArray *picModels = [self.picModels mutableCopy];
         NSMutableArray *indexPaths = [NSMutableArray array];
-        NSInteger startIndex = self.picModels.count;
-        for (NSInteger i = 0; i < picModels.count; i++) {
+        NSInteger startIndex = picModels.count;
+        
+        for (NSInteger i = 0; i < randomPicModels.count; i++) {
             [indexPaths addObject:[NSIndexPath indexPathForItem:startIndex + i inSection:0]];
         }
-        [self.picModels addObjectsFromArray:picModels];
+        [picModels addObjectsFromArray:randomPicModels];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            self.picModels = picModels;
+            
             [self.collectionView.mj_header endRefreshing];
             [self.collectionView.mj_footer endRefreshing];
+            
             [UIView animateWithDuration:0.85 delay:0 usingSpringWithDamping:0.55 initialSpringVelocity:0.1 options:kNilOptions animations:^{
                 [self.collectionView performBatchUpdates:^{
                     [self.collectionView insertItemsAtIndexPaths:indexPaths];
@@ -71,6 +80,7 @@
                     }
                 }];
             } completion:nil];
+            
         });
     });
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JPLiquidLayout'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '简单易用的流式布局'
 
 # This description is used to generate tags and improve search results.

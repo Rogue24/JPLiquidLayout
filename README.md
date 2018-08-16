@@ -80,13 +80,13 @@
 ```
 
 #### ViewModel形式和JPLiquidLayout形式的对比
-- ViewModel形式：图片数量很多时（例如相册照片有几千张的情况下）使用ViewModel形式效果更优，JPLiquidLayout形式会有些许卡顿（后续优化），每次数据发生变化都需要使用JPLiquidLayoutTool进行计算更新布局
-- JPLiquidLayout形式：代码会更简洁，只需要配置好参数后续不需要别的操作
+- ViewModel形式：图片数量很多时（例如相册照片有几千张的情况下）使用ViewModel形式效果更优，JPLiquidLayout形式会有些许卡顿（后续优化），每次数据发生变化都需要使用JPLiquidLayoutTool进行计算更新布局；
+- JPLiquidLayout形式：代码会更简洁，只需要初始化时配置好参数，后续不需要别的操作。
 
 ### 增、删、改三种动画效果
-- 使用ViewModel形式使用系统自带的方法即可
-- 使用JPLiquidLayout形式，则需要设置singleAnimated属性为YES（默认就为YES），同样使用系统自带的方法即可
-- 目前只支持单个元素的增删改动画，后续添加多个组合的动画和挪动动画
+- 使用ViewModel形式使用系统自带的方法即可；
+- 使用JPLiquidLayout形式，则需要设置singleAnimated属性为YES（默认就为YES），同样使用系统自带的方法即可；
+- 目前只支持单个元素的增删改动画，后续添加多个组合的动画和挪动动画。
 
 1. 增（demo中为点击添加）
 ```objc
