@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-流式布局：按顺序排列，元素宽高比保持不变，每行高度相同并且不超过最大列数。
+流式布局：流水方式排列，元素宽高比保持不变，能完整展示每个元素，每行高度相同且不会超过最大列数。
                        DESC
 
   s.homepage         = 'https://github.com/Rogue24/JPLiquidLayout'
