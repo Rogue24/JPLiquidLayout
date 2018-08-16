@@ -20,10 +20,12 @@
         2. CollectionViewLaout形式下目前仅支持单个section的情况；
         3. CollectionViewLaout形式下的动画效果目前仅支持单个元素的。
 
-- 画面展示：        
+- 画面展示：
+
 ![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/cover.gif)
 
 - 相册照片应用：
+
 ![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/photos.gif)
 
 ## 如何使用
@@ -111,6 +113,7 @@ pod 'JPLiquidLayout'
 ## 反馈地址
 
 邮箱：zhoujianping24@hotmail.com
+
 博客：https://www.jianshu.com/u/2edfbadd451c
 
 ## License
