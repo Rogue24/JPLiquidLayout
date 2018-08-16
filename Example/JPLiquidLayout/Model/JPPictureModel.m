@@ -12,8 +12,9 @@
 
 + (NSArray<JPPictureModel *> *)randomPicModels {
     NSMutableArray *picModels = [NSMutableArray array];
-    for (NSInteger i = 0; i < 40; i++) {
-        JPPictureModel *picModel = [self randomPicModel];
+    while (picModels.count < 40) {
+        NSString *picName = picModels.count ? [picModels.lastObject picName] : nil;
+        JPPictureModel *picModel = [self randomPicModel:picName];
         if (picModel) {
             [picModels addObject:picModel];
         } else {
@@ -23,13 +24,16 @@
     return picModels;
 }
 
-+ (JPPictureModel *)randomPicModel {
++ (JPPictureModel *)randomPicModel:(NSString *)picName {
     NSInteger index = arc4random_uniform(20);
-    NSString *picName = [NSString stringWithFormat:@"pic_%02zd", index];
-    UIImage *image = [UIImage imageNamed:picName];
+    NSString *randomName = [NSString stringWithFormat:@"pic_%02zd", index];
+    if (picName && [randomName isEqualToString:picName]) {
+        return [self randomPicModel:picName];
+    }
+    UIImage *image = [UIImage imageNamed:randomName];
     if (image) {
         JPPictureModel *picModel = [JPPictureModel new];
-        picModel.picName = picName;
+        picModel.picName = randomName;
         picModel.picWhScale = image.size.width / image.size.height;
         return picModel;
     } else {

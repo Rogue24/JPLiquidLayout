@@ -45,14 +45,21 @@
 
 - (void)insertCellVMs {
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    // 放入子线程计算布局
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 一般从服务器请求获取的数据会给出图片的尺寸（相册使用photoKit的话，asset对象也会有照片尺寸给出），获取图片的宽高比
         NSArray *picModels = [JPPictureModel randomPicModels];
         NSMutableArray *indexPaths = [NSMutableArray array];
         NSInteger startIndex = self.cellVMs.count;
         for (NSInteger i = 0; i < picModels.count; i++) {
             [indexPaths addObject:[NSIndexPath indexPathForItem:startIndex + i inSection:0]];
-            [self.cellVMs addObject:[[JPCollectionViewCellViewModel alloc] initWithPicModel:picModels[i]]];
+            JPPictureModel *picModel = picModels[i];
+            // 创建遵守JPLiquidLayoutProtocol协议的viewModel
+            JPCollectionViewCellViewModel *cellVM = [[JPCollectionViewCellViewModel alloc] initWithPicModel:picModel];
+            [self.cellVMs addObject:cellVM];
         }
+        // 使用JPLiquidLayoutTool工具类进行布局计算
+        // 需要传入【整个】viewModel数组，和其他参数
         [JPLiquidLayoutTool updateItemFrames:self.cellVMs
                                  targetIndex:startIndex
                                   flowLayout:flowLayout
@@ -60,18 +67,21 @@
                                   baseHeight:self->_baseH
                               itemMaxWhScale:self->_maxWhScale
                                       maxCol:self->_maxCol];
+        // 回到主线程进行刷新
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.collectionView.mj_header endRefreshing];
             [self.collectionView.mj_footer endRefreshing];
-            [self.collectionView performBatchUpdates:^{
-                [self.collectionView insertItemsAtIndexPaths:indexPaths];
-            } completion:^(BOOL finished) {
-                self.collectionView.mj_footer.hidden = NO;
-                self.collectionView.mj_header.hidden = YES;
-                if (self.cellVMs.count > 300) {
-                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-                }
-            }];
+            [UIView animateWithDuration:0.85 delay:0 usingSpringWithDamping:0.55 initialSpringVelocity:0.1 options:kNilOptions animations:^{
+                [self.collectionView performBatchUpdates:^{
+                    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+                } completion:^(BOOL finished) {
+                    self.collectionView.mj_footer.hidden = NO;
+                    self.collectionView.mj_header.hidden = YES;
+                    if (self.cellVMs.count > 300) {
+                        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+                    }
+                }];
+            } completion:nil];
         });
     });
 }
@@ -85,11 +95,12 @@
 }
 
 - (void)didSelectCellAtIndexPath:(NSIndexPath *)indexPath {
+    JPCollectionViewCellViewModel *cellVM = self.cellVMs[indexPath.item];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     switch (self.segmentedControl.selectedSegmentIndex) {
         case 0:
         {
-            [self.cellVMs insertObject:[[JPCollectionViewCellViewModel alloc] initWithPicModel:[JPPictureModel randomPicModel]] atIndex:indexPath.item];
+            [self.cellVMs insertObject:[[JPCollectionViewCellViewModel alloc] initWithPicModel:[JPPictureModel randomPicModel:cellVM.picModel.picName]] atIndex:indexPath.item];
             break;
         }
             
@@ -101,7 +112,7 @@
             
         case 2:
         {
-            [self.cellVMs replaceObjectAtIndex:indexPath.item withObject:[[JPCollectionViewCellViewModel alloc] initWithPicModel:[JPPictureModel randomPicModel]]];
+            [self.cellVMs replaceObjectAtIndex:indexPath.item withObject:[[JPCollectionViewCellViewModel alloc] initWithPicModel:[JPPictureModel randomPicModel:cellVM.picModel.picName]]];
             break;
         }
             

@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.collectionView.backgroundColor = [UIColor orangeColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:208.0 / 255.0 green:84.0 / 255.0 blue:116.0 / 255.0 alpha:1.0];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"JPCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:JPCollectionViewCellID];
     

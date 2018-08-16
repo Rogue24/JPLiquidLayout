@@ -60,15 +60,17 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.collectionView.mj_header endRefreshing];
             [self.collectionView.mj_footer endRefreshing];
-            [self.collectionView performBatchUpdates:^{
-                [self.collectionView insertItemsAtIndexPaths:indexPaths];
-            } completion:^(BOOL finished) {
-                self.collectionView.mj_footer.hidden = NO;
-                self.collectionView.mj_header.hidden = YES;
-                if (self.picModels.count > 300) {
-                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-                }
-            }];
+            [UIView animateWithDuration:0.85 delay:0 usingSpringWithDamping:0.55 initialSpringVelocity:0.1 options:kNilOptions animations:^{
+                [self.collectionView performBatchUpdates:^{
+                    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+                } completion:^(BOOL finished) {
+                    self.collectionView.mj_footer.hidden = NO;
+                    self.collectionView.mj_header.hidden = YES;
+                    if (self.picModels.count > 300) {
+                        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+                    }
+                }];
+            } completion:nil];
         });
     });
 }
@@ -82,10 +84,11 @@
 }
 
 - (void)didSelectCellAtIndexPath:(NSIndexPath *)indexPath {
+    JPPictureModel *picModel = self.picModels[indexPath.item];
     switch (self.segmentedControl.selectedSegmentIndex) {
         case 0:
         {
-            [self.picModels insertObject:[JPPictureModel randomPicModel] atIndex:indexPath.item];
+            [self.picModels insertObject:[JPPictureModel randomPicModel:picModel.picName] atIndex:indexPath.item];
             break;
         }
             
@@ -97,7 +100,7 @@
             
         case 2:
         {
-            [self.picModels replaceObjectAtIndex:indexPath.item withObject:[JPPictureModel randomPicModel]];
+            [self.picModels replaceObjectAtIndex:indexPath.item withObject:[JPPictureModel randomPicModel:picModel.picName]];
             break;
         }
             

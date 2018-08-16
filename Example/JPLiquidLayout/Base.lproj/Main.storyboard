@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Example-->
         <scene sceneID="fsb-Ug-35c">
             <objects>
                 <tableViewController id="l8T-CF-15U" customClass="JPTableViewController" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="l8T-CF-15U" id="EHH-ip-MAc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NxA-A2-hl2"/>
+                    <navigationItem key="navigationItem" title="Example" id="NxA-A2-hl2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUE-EC-qUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

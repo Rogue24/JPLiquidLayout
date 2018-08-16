@@ -13,5 +13,5 @@
 @property (nonatomic, assign) CGFloat picWhScale;
 
 + (NSArray<JPPictureModel *> *)randomPicModels;
-+ (JPPictureModel *)randomPicModel;
++ (JPPictureModel *)randomPicModel:(NSString *)picName;
 @end
