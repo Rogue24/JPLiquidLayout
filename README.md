@@ -85,19 +85,25 @@
 
 ### 增、删、改三种动画效果
 - 使用ViewModel形式使用系统自带的方法即可
-- 使用JPLiquidLayout形式，则需要设置singleAnimated属性为YES（默认就为YES）
+- 使用JPLiquidLayout形式，则需要设置singleAnimated属性为YES（默认就为YES），同样使用系统自带的方法即可
 - 目前只支持单个元素的增删改动画，后续添加多个组合的动画和挪动动画
 
 1. 增（demo中为点击添加）
-
+```objc
+[self.collectionView insertItemsAtIndexPaths:@[indexPath]];
+```
 ![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/insert.gif)
 
 2. 删（demo中为点击删除）
-
+```objc
+[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+```
 ![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/delete.gif)
 
 3. 改（demo中为点击替换）
-
+```objc
+[self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+```
 ![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/reload.gif)
 
 ###
