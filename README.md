@@ -118,9 +118,8 @@ pod 'JPLiquidLayout'
 
 ## 反馈地址
 
-扣扣：184669029
-
-博客：https://www.jianshu.com/u/2edfbadd451c
+    扣扣：184669029
+    博客：https://www.jianshu.com/u/2edfbadd451c
 
 ## License
 
