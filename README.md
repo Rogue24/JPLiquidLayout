@@ -22,11 +22,11 @@
 
 - 画面展示：
 
-![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/cover.gif)
+![image](https://github.com/Rogue24/JPCover/raw/master/JPLiquidLayout/cover.gif)
 
 - 相册照片应用：
 
-![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/photos.gif)
+![image](https://github.com/Rogue24/JPCover/raw/master/JPLiquidLayout/photos.gif)
 
 ## 如何使用
 
@@ -92,19 +92,19 @@
 ```objc
 [self.collectionView insertItemsAtIndexPaths:@[indexPath]];
 ```
-![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/insert.gif)
+![image](https://github.com/Rogue24/JPCover/raw/master/JPLiquidLayout/insert.gif)
 
 2. 删（demo中为点击删除）
 ```objc
 [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 ```
-![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/delete.gif)
+![image](https://github.com/Rogue24/JPCover/raw/master/JPLiquidLayout/delete.gif)
 
 3. 改（demo中为点击替换）
 ```objc
 [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
 ```
-![image](https://github.com/Rogue24/JPLiquidLayout/raw/master/Cover/reload.gif)
+![image](https://github.com/Rogue24/JPCover/raw/master/JPLiquidLayout/reload.gif)
 
 ###
 
