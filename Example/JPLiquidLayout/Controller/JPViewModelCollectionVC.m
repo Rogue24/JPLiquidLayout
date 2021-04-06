@@ -141,7 +141,7 @@
 #pragma mark - <UICollectionViewDelegateFlowLayout>
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JPCollectionViewCellViewModel *cellVM = self.cellVMs[indexPath.item];\
+    JPCollectionViewCellViewModel *cellVM = self.cellVMs[indexPath.item];
     return cellVM.jp_itemFrame.size;
 }
 
